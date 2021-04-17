@@ -366,7 +366,7 @@ label::before {
   width: 55px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 460px) {
   .cabecera .container .row .logo svg path {
     fill: #fff;
   }
@@ -387,7 +387,13 @@ label::before {
   height: auto;
   width: 50px;
   position: absolute;
-  right: 15px;
+  right: 72px;
+}
+
+@media (max-width: 460px) {
+  .cabecera .container .row .menu .lista {
+    right: 15px;
+  }
 }
 
 .cabecera .container .row .menu .lista .lenguaje .idioma {
