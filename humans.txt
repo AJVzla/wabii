@@ -1,0 +1,9 @@
+﻿
+/* EQUIPO */
+	Front-End: Anthony Mas yu rubi
+	Email:  anthoni97@gmail.com
+	Ubicación: Capital Federal, Argentina.
+/* SITIO */
+	Estándares: HTML5, CSS3, Sass
+	Componentes: jQuery
+	Software: H5BP, Twitter Boostrap, CodeIgniter

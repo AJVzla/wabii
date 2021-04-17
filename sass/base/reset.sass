@@ -1,0 +1,261 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+main
+  margin-bottom: 100px
+ul
+  list-style: none
+a
+  text-decoration: none
+  &:hover, &:focus
+    text-decoration: none
+  @extend %animacion-suave
+
+.clear 
+  clear: both
+
+/* Animación suave */
+%animacion-suave 
+  -webkit-transition: all .35s ease-in-out
+  -moz-transition: all .35s ease-in-out
+  -o-transition: all .35s ease-in-out
+  -ms-transition: all .35s ease-in-out
+  transition: all .35s ease-in-out
+
+%animacion-nav
+  -webkit-transition: all .55s ease-in-out
+  -moz-transition: all .55s ease-in-out
+  -o-transition: all .55s ease-in-out
+  -ms-transition: all .55s ease-in-out
+  transition: all .55s ease-in-out
+
+/*Oculta las slides de más mientras carga el JS*/
+.owl-carousel 
+  display: block
+.owl-carousel li:not(:first-child) 
+  display: none
+.owl-carousel.owl-loaded li:not(:first-child) 
+  display: block
+
+// Placeholder Color
+
+@mixin placeholder-color($color) 
+  &::-webkit-input-placeholder  /* WebKit browsers */
+      color: $color  
+  &:-moz-placeholder  /* Mozilla Firefox 4 to 18 */
+      color: $color  
+  &::-moz-placeholder  /* Mozilla Firefox 19+ */
+      color: $color  
+  &:-ms-input-placeholder  /* Internet Explorer 10+ */
+      color: $color  
+
+      /* Animación suave */
+
+/*Oculta las slides de más mientras carga el JS*/
+.owl-carousel 
+  display: block
+.owl-carousel li:not(:first-child) 
+  display: none
+.owl-carousel.owl-loaded li:not(:first-child) 
+  display: block
+
+div[class^='cont-'], div[class*=' cont-']
+  width: 100% 
+  margin: 0 auto
+  padding: 0  15px
+
+.cont-1300 
+  max-width:  1300px 
+.cont-1170 
+  max-width:  1170px 
+.cont-990 
+  max-width:  990px 
+.cont-975 
+  max-width:  975px 
+.cont-768 
+  max-width:  768px 
+.cont-550 
+  max-width:  550px 
+
+// Mixin de contenedores de anchos especificos (wrappers)
+@mixin cont($ancho)
+  .cont-#{$ancho}
+    max-width: $ancho
+  
+.block
+    top: 0 !important
+// Espaciado entre sections
+.girar
+    transform: rotate(180deg) !important
+.banda
+  padding: 60px 0
+  @media(max-width: 550px)
+    padding: 30px 0
+  @media(max-width: 320px)
+    padding: 20px 0
+
+// Columna de texto doble  
+.col-doble-texto 
+  -moz-column-count: 2;
+  -webkit-columns: 2;
+  columns: 2;
+  -webkit-column-gap: 46px;
+  column-gap: 46px;
+  display: block
+  @media (max-width: 700px)
+    -moz-column-count: 1;
+    -webkit-columns: 1;
+    columns: 1;
+    -webkit-column-gap: 0;
+    column-gap: 0;
+
+.phone
+    min-width: 320px
+    width: 100%
+    height: 65px
+    margin: auto
+    display: none
+    align-items: flex-end
+    position: relative
+    justify-content: center
+    margin: auto
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)
+    position: fixed
+    z-index: 99999999
+    @media(max-width: 800px)
+      display: flex
+    &::before
+        content: ''
+        position: absolute
+        width: 84%
+        height: 0px
+        bottom: -10px
+        left: 0
+        right: 0
+        margin: auto
+    
+    &::after
+        content: ''
+    
+    &_content
+        // filter: contrast(20)
+        width: 100%
+        background-color: white
+        overflow: hidden
+        position: absolute
+    
+    &_bottom
+        width: 100%
+        height: 66px
+        background: #21c063
+        display: flex
+        justify-content: center
+        // filter: blur(10px)
+    
+
+
+label
+    cursor: pointer
+    display: flex
+    width: 25%
+    height: 66px
+    position: relative
+    z-index: 2
+    align-items: center
+    justify-content: center
+    > .icos 
+        width: 25px
+        top: 23px
+        color: #fff
+        bottom: 0
+        font-size: 30px
+        margin: auto
+        position: absolute
+        z-index: 3
+        transition: 200ms 100ms cubic-bezier(.14,-0.08,.74,1.4)
+    
+    &::before
+        content: ''
+        position: absolute
+    
+
+.circle
+    width: 60px
+    height: 60px
+    background: #2D2E3A
+    position: absolute
+    top: -30px
+    z-index: 1
+    border-radius: 50%
+    left: 0
+    right: 0
+    margin: auto
+    transition: 200ms cubic-bezier(.14,-0.08,.74,1.4)
+    box-shadow: 0 0 8px -2px rgba(0, 0, 0, .4)
+.indicator
+    width: 70px
+    height: 70px
+    background-size: cover
+    background-position: 0 10px
+    border-radius: 50%
+    position: absolute
+    left: 0
+    top: -42px
+    right: 0
+    margin: auto
+    transition: 200ms cubic-bezier(.14,-0.08,.74,1.4)
+
+#s1
+    display: none
+    &:checked
+        ~ [for="s1"] > .icos
+            top: -3px
+        
+        ~ .circle,
+        ~ div div .indicator
+            left: -74%
+        
+    
+
+#s2
+    display: none
+    &:checked
+        ~ [for="s2"] > .icos
+            top: -3px
+        
+        ~ .circle,
+        ~ div div .indicator
+            left: -24%
+        
+    
+
+#s3
+    display: none
+    &:checked
+        ~ [for="s3"] > .icos
+            top: -3px
+        
+        ~ .circle,
+        ~ div div .indicator
+            left: 26%
+#s4
+    display: none
+    &:checked
+        ~ [for="s4"] > button
+            top: -26px
+            left: -2px
+            position: relative
+            @media(max-width: 460px)
+              top: -23px
+              left: 2px
+        ~ .circle,
+        ~ div div .indicator
+            left: 73%
+.white
+  background: #fff
+        
+    
+
